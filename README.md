@@ -31,9 +31,9 @@
 
         
         .terminal-window {
-            width: 900px; /* جعلتها أعرض قليلاً لتسع النصوص */
+            width: 900px; 
             max-width: 95%;
-            height: 600px; /* جعلتها أطول قليلاً */
+            height: 600px; 
             background-color: #000;
             border: 1px solid #333;
             border-radius: 8px;
