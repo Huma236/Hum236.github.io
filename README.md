@@ -1,28 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humam | Engineer Portfolio</title>
     <style>
-      
         body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
-            
-            
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-                url('https://imgs.search.brave.com/7nToAkaPPhZfa8bxRu26_pAbi-R8rSlg3Xo9pVgqaHc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/ZWh2Z29xZjJncmQ2/MS5wbmc_d2lkdGg9/MTkyMCZmb3JtYXQ9/cG5nJmF1dG89d2Vi/cCZzPWQ2Y2IxN2Y3/NzNhOGMwNTg5NTcz/NDlmZWU1OTJlOTA2/NDM3MTc2YmE'); 
-            
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
             background-color: #0d0d0d;
             color: #00ff41; 
             font-family: 'Courier New', Courier, monospace;
@@ -32,9 +15,14 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://imgs.search.brave.com/7nToAkaPPhZfa8bxRu26_pAbi-R8rSlg3Xo9pVgqaHc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/ZWh2Z29xZjJncmQ2/MS5wbmc_d2lkdGg9/MTkyMCZmb3JtYXQ9/cG5nJmF1dG89d2Vi/cCZzPWQ2Y2IxN2Y3/NzNhOGMwNTg5NTcz/NDlmZWU1OTJlOTA2/NDM3MTc2YmE'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-       
         @keyframes cinematicUp {
             0% {
                 opacity: 0;
@@ -46,7 +34,6 @@
             }
         }
 
-        
         .terminal-window {
             width: 900px; 
             max-width: 95%;
@@ -58,13 +45,10 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            
-           
             opacity: 0;
             animation: cinematicUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-       
         .terminal-header {
             background-color: #1a1a1a;
             padding: 10px;
@@ -78,7 +62,6 @@
         .yellow { background-color: #ffbd2e; }
         .green { background-color: #27c93f; }
 
-        
         .terminal-body {
             padding: 20px;
             flex-grow: 1;
@@ -114,7 +97,7 @@
             <div class="dot green"></div>
         </div>
         <div class="terminal-body" id="terminal-content">
-            </div>
+        </div>
     </div>
 
     <script>
@@ -145,7 +128,11 @@
             { type: 'output', text: '> Because I offer the rare blend of a Gamer\'s passion and an Engineer\'s logic.' },
             { type: 'output', text: '> Over the past 2 years, I dedicated thousands of hours to deep-dive debugging.' },
             { type: 'output', text: '> Specialized in dissecting Minecraft Client-side vs Server-side anomalies.' },
+            { type: 'output', text: '> As an AI Engineering Student, I treat support tickets as logical system errors.' },
             { type: 'output', text: '> I aim to elevate my technical expertise by working alongside industry leaders at Hypixel Inc.' },
+            
+            { type: 'input', text: 'status' },
+            { type: 'output', text: 'READY FOR DEPLOYMENT.' },
         ];
 
         const terminalContent = document.getElementById('terminal-content');
@@ -168,11 +155,9 @@
                 terminalContent.scrollTop = terminalContent.scrollHeight;
             }
 
-          
             const currentDiv = terminalContent.lastElementChild;
             const textSpan = line.type === 'input' ? currentDiv.querySelector('.command') : currentDiv.querySelector('.output');
             
-          
             const allCursors = document.querySelectorAll('.cursor');
             allCursors.forEach(c => c.style.display = 'none');
             
@@ -190,11 +175,10 @@
             } else {
                 cmdIndex++;
                 charIndex = 0;
-                setTimeout(typeLine, line.type === 'input' ? 500 : 150);
+                setTimeout(typeLine, line.type === 'input' ? 500 : 150); 
             }
         }
 
-     
         window.onload = function() {
             setTimeout(typeLine, 1200); 
         };
