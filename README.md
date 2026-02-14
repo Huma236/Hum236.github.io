@@ -140,7 +140,7 @@
             if (charIndex === 0) {
                 const div = document.createElement('div');
                 if (line.type === 'input') {
-                    div.innerHTML = `<span class="prompt">root@humam:~$</span> <span class="command"></span><span class="cursor"></span>`;
+                    div.innerHTML = `<span class="prompt">root@engineer:~$</span> <span class="command"></span><span class="cursor"></span>`;
                 } else {
                     div.innerHTML = `<span class="output"></span>`;
                 }
