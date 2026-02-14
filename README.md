@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humam | Engineer Portfolio</title>
     <style>
-        /* إعدادات الصفحة الأساسية */
+      
         body {
             background-color: #0d0d0d;
             color: #00ff41; 
@@ -17,7 +17,7 @@
             overflow: hidden;
         }
 
-        /* تعريف حركة الصعود السينمائي */
+       
         @keyframes cinematicUp {
             0% {
                 opacity: 0;
@@ -29,7 +29,7 @@
             }
         }
 
-        /* نافذة التيرمينال */
+        
         .terminal-window {
             width: 900px; /* جعلتها أعرض قليلاً لتسع النصوص */
             max-width: 95%;
@@ -42,12 +42,12 @@
             flex-direction: column;
             overflow: hidden;
             
-            /* تطبيق الأنيميشن */
+           
             opacity: 0;
             animation: cinematicUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        /* الهيدر */
+       
         .terminal-header {
             background-color: #1a1a1a;
             padding: 10px;
@@ -61,18 +61,18 @@
         .yellow { background-color: #ffbd2e; }
         .green { background-color: #27c93f; }
 
-        /* المحتوى */
+        
         .terminal-body {
             padding: 20px;
             flex-grow: 1;
             overflow-y: auto;
             font-size: 16px;
-            line-height: 1.6; /* مسافة أفضل بين الأسطر */
+            line-height: 1.6; 
         }
 
         .prompt { color: #bd93f9; font-weight: bold; }
         .command { color: #f8f8f2; }
-        .output { color: #00ff41; margin-bottom: 15px; display: block; text-shadow: 0 0 5px rgba(0, 255, 65, 0.3); } /* إضافة توهج للنص */
+        .output { color: #00ff41; margin-bottom: 15px; display: block; text-shadow: 0 0 5px rgba(0, 255, 65, 0.3); }
         .cursor {
             display: inline-block;
             width: 10px;
@@ -140,7 +140,6 @@
 
             const line = commands[cmdIndex];
             
-            // إنشاء سطر جديد
             if (charIndex === 0) {
                 const div = document.createElement('div');
                 if (line.type === 'input') {
@@ -152,11 +151,11 @@
                 terminalContent.scrollTop = terminalContent.scrollHeight;
             }
 
-            // الكتابة
+          
             const currentDiv = terminalContent.lastElementChild;
             const textSpan = line.type === 'input' ? currentDiv.querySelector('.command') : currentDiv.querySelector('.output');
             
-            // إدارة المؤشر
+          
             const allCursors = document.querySelectorAll('.cursor');
             allCursors.forEach(c => c.style.display = 'none');
             
@@ -170,7 +169,7 @@
             charIndex++;
 
             if (charIndex < line.text.length) {
-                setTimeout(typeLine, 35); // جعلت السرعة أسرع قليلاً (35ms) لتبدو أكثر احترافية
+                setTimeout(typeLine, 35); 
             } else {
                 cmdIndex++;
                 charIndex = 0;
@@ -178,7 +177,7 @@
             }
         }
 
-        // بدء التشغيل
+     
         window.onload = function() {
             setTimeout(typeLine, 1200); 
         };
