@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineer | Terminal Access</title>
     <style>
-        /* إعدادات الصفحة الأساسية - الظلام الدامس */
+        /* إعدادات الصفحة الأساسية */
         body {
             background-color: #0d0d0d;
-            color: #00ff41; /* اللون الأخضر الهكر */
-            font-family: 'Courier New', Courier, monospace; /* خط الآلة الكاتبة */
+            color: #00ff41; 
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -17,7 +18,19 @@
             overflow: hidden;
         }
 
-        /* نافذة التيرمينال */
+        /* تعريف حركة الصعود السينمائي */
+        @keyframes cinematicUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) scale(0.95); /* يبدأ من تحت وبحجم أصغر قليلاً */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1); /* يستقر في مكانه وحجمه الطبيعي */
+            }
+        }
+
+        /* نافذة التيرمينال مع تطبيق الحركة */
         .terminal-window {
             width: 800px;
             max-width: 90%;
@@ -25,13 +38,17 @@
             background-color: #000;
             border: 1px solid #333;
             border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1); /* توهج خفيف */
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15); /* زدنا التوهج قليلاً */
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            
+            /* تطبيق الأنيميشن */
+            opacity: 0; /* مخفي بالبداية */
+            animation: cinematicUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* حركة انسيابية جداً */
         }
 
-        /* شريط العنوان العلوي */
+        /* باقي الستايل كما هو */
         .terminal-header {
             background-color: #1a1a1a;
             padding: 10px;
@@ -40,16 +57,11 @@
             border-bottom: 1px solid #333;
         }
 
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
         .red { background-color: #ff5f56; }
         .yellow { background-color: #ffbd2e; }
         .green { background-color: #27c93f; }
 
-        /* منطقة النص */
         .terminal-body {
             padding: 20px;
             flex-grow: 1;
@@ -58,13 +70,9 @@
             line-height: 1.5;
         }
 
-        /* ستايل النصوص المختلفة */
-        .prompt { color: #bd93f9; font-weight: bold; } /* لون اسم المستخدم */
-        .command { color: #f8f8f2; } /* لون الأمر */
-        .output { color: #00ff41; margin-bottom: 15px; } /* لون النتيجة */
-        .highlight { color: #f1fa8c; font-weight: bold; } /* تمييز الكلمات المهمة */
-
-        /* المؤشر الوامض */
+        .prompt { color: #bd93f9; font-weight: bold; }
+        .command { color: #f8f8f2; }
+        .output { color: #00ff41; margin-bottom: 15px; display: block; }
         .cursor {
             display: inline-block;
             width: 10px;
@@ -72,14 +80,10 @@
             background-color: #00ff41;
             animation: blink 1s infinite;
             vertical-align: middle;
+            margin-left: 5px;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* إخفاء شريط التمرير للجمالية */
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
     </style>
@@ -97,31 +101,32 @@
     </div>
 
     <script>
-        // هنا البيانات الخاصة بك - عدلها كما تشاء
+        // هنا البيانات الحقيقية - عدل اسمك وخبراتك هنا
         const commands = [
             { type: 'input', text: 'whoami' },
-            { type: 'output', text: '> AI Engineering Student & Support Specialist.' },
+            { type: 'output', text: '> [Your Name] | Electronics & AI Engineering Student.' },
             
-            { type: 'input', text: 'cat experience.txt' },
-            { type: 'output', text: '> 2.5 Years as Senior Support in London Community Servers.' },
-            { type: 'output', text: '> Expert in Conflict Resolution & Technical Troubleshooting.' },
+            { type: 'input', text: 'cat experience_log.txt' },
+            { type: 'output', text: '> Senior Support Staff @ London Community (2.5 Years).' },
+            { type: 'output', text: '> Managed 500+ tickets with 98% satisfaction rate.' },
+            { type: 'output', text: '> Specialized in Conflict Resolution & System Diagnostics.' },
             
-            { type: 'input', text: './skills.sh --list' },
-            { type: 'output', text: '[✔] Network Diagnostics (WinMTR, Logs Analysis)' },
-            { type: 'output', text: '[✔] Hypixel Anti-Cheat Logic Understanding' },
-            { type: 'output', text: '[✔] English Fluency & Professional Communication' },
+            { type: 'input', text: './run_skills.exe' },
+            { type: 'output', text: '[LOADING] Analyzing skillset...' },
+            { type: 'output', text: '✔ Network Analysis (WinMTR, Packet Loss Debugging)' },
+            { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics' },
+            { type: 'output', text: '✔ English Fluency (C1 Level)' },
 
-            { type: 'input', text: 'echo "Ready to work?"' },
-            { type: 'output', text: 'YES. Standing by for deployment...' }
+            { type: 'input', text: 'echo "Ready to Deploy?"' },
+            { type: 'output', text: 'YES. Awaiting instructions...' }
         ];
 
         const terminalContent = document.getElementById('terminal-content');
         let cmdIndex = 0;
         let charIndex = 0;
-        let isTyping = false;
 
         function typeLine() {
-            if (cmdIndex >= commands.length) return; // انتهينا
+            if (cmdIndex >= commands.length) return;
 
             const line = commands[cmdIndex];
             
@@ -129,25 +134,22 @@
             if (charIndex === 0) {
                 const div = document.createElement('div');
                 if (line.type === 'input') {
-                    div.innerHTML = `<span class="prompt">root@engineer:~$</span> <span class="command"></span><span class="cursor"></span>`;
+                    div.innerHTML = `<span class="prompt">admin@hypixel-candidate:~$</span> <span class="command"></span><span class="cursor"></span>`;
                 } else {
                     div.innerHTML = `<span class="output"></span>`;
                 }
                 terminalContent.appendChild(div);
-                
-                // التمرير للأسفل تلقائياً
                 terminalContent.scrollTop = terminalContent.scrollHeight;
             }
 
-            // الكتابة حرفاً بحرف
+            // الكتابة
             const currentDiv = terminalContent.lastElementChild;
             const textSpan = line.type === 'input' ? currentDiv.querySelector('.command') : currentDiv.querySelector('.output');
             
-            // إزالة المؤشر من الأسطر السابقة
+            // إدارة المؤشر
             const allCursors = document.querySelectorAll('.cursor');
             allCursors.forEach(c => c.style.display = 'none');
             
-            // إضافة المؤشر للسطر الحالي فقط (إذا كان أمراً)
             if (line.type === 'input') {
                 const cursor = document.createElement('span');
                 cursor.className = 'cursor';
@@ -158,18 +160,18 @@
             charIndex++;
 
             if (charIndex < line.text.length) {
-                // سرعة الكتابة (عدل الرقم 50 لجعله أسرع أو أبطأ)
-                setTimeout(typeLine, 50);
+                setTimeout(typeLine, 40); // سرعة الكتابة
             } else {
-                // الانتقال للسطر التالي بعد توقف بسيط
                 cmdIndex++;
                 charIndex = 0;
-                setTimeout(typeLine, line.type === 'input' ? 300 : 100); // الأوامر تتأخر قليلاً لمحاكاة المعالجة
+                setTimeout(typeLine, line.type === 'input' ? 400 : 150); // تأخير بين الأسطر
             }
         }
 
-        // بدء التشغيل عند تحميل الصفحة
-        window.onload = typeLine;
+        // التعديل الجوهري: تأخير البدء حتى انتهاء حركة الصعود
+        window.onload = function() {
+            setTimeout(typeLine, 1500); // ينتظر 1.5 ثانية (حتى تصعد النافذة) ثم يبدأ الكتابة
+        };
     </script>
 </body>
 </html>
