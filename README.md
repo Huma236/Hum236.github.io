@@ -38,7 +38,7 @@
             width: 900px; 
             max-width: 95%;
             height: 600px; 
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid #333;
             border-radius: 8px;
