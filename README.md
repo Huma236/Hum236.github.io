@@ -108,7 +108,7 @@
             
             { type: 'input', text: 'cat experience_log.txt' },
             { type: 'output', text: '> Senior Support Staff @ Discord London Community.' },
-            { type: 'output', text: '> Managed a gaming community of ~23,000 users (Jun 2020 - Sep 2023).' },
+            { type: 'output', text: '> Managed a hybrid Social & Gaming Community of ~23,000 users (Jun 2020 - Sep 2023).' },
             { type: 'output', text: '> Status: Project Concluded / Server Closed.' },
             { type: 'output', text: '> Handled 450+ tickets with a 95% satisfaction rate.' },
             { type: 'output', text: '> Developed deep understanding of user psychology and needs analysis.' },
@@ -123,8 +123,14 @@
             { type: 'input', text: 'echo "Am I in Heaven?"' },
             { type: 'output', text: 'NO, But you might be hired soon! ;)' },
 
-            { type: 'input', text: 'status' },
-            { type: 'output', text: 'READY FOR DEPLOYMENT.' },
+            { type: 'input', text: 'Why me?' },
+            { type: 'output', text: '> Because I offer the rare blend of a Gamer\'s passion and an Engineer\'s logic.' },
+            { type: 'output', text: '> Over the past 2 years, I dedicated thousands of hours to deep-dive debugging.' },
+            { type: 'output', text: '> Specialized in dissecting Minecraft Client-side vs Server-side anomalies.' },
+            { type: 'output', text: '> As an AI Engineering Student, I treat support tickets as logical system errors.' },
+            { type: 'output', text: '> I do not just apply "quick fixes"; I hunt for the Root Cause.' },
+            { type: 'output', text: '> I am ready to turn this technical obsession into professional value.' },
+            { type: 'output', text: '> I aim to elevate my technical expertise by working alongside industry leaders at Hypixel Inc.' },
         ];
 
         const terminalContent = document.getElementById('terminal-content');
