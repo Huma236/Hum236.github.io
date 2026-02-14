@@ -39,6 +39,7 @@
             max-width: 95%;
             height: 600px; 
             background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
             border: 1px solid #333;
             border-radius: 8px;
             box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
