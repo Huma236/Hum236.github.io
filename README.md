@@ -1,7 +1,11 @@
 <html lang="en">
-
-
-    body {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humam | Engineer Portfolio</title>
+    <style>
+      
+        body {
             margin: 0;
             height: 100vh;
             display: flex;
@@ -19,13 +23,6 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humam | Engineer Portfolio</title>
-    <style>
-      
-        body {
             background-color: #0d0d0d;
             color: #00ff41; 
             font-family: 'Courier New', Courier, monospace;
