@@ -1,4 +1,24 @@
 <html lang="en">
+
+
+    body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            
+            
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+                url('https://imgs.search.brave.com/7nToAkaPPhZfa8bxRu26_pAbi-R8rSlg3Xo9pVgqaHc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/ZWh2Z29xZjJncmQ2/MS5wbmc_d2lkdGg9/MTkyMCZmb3JtYXQ9/cG5nJmF1dG89d2Vi/cCZzPWQ2Y2IxN2Y3/NzNhOGMwNTg5NTcz/NDlmZWU1OTJlOTA2/NDM3MTc2YmE'); 
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
