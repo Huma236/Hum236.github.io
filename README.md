@@ -107,18 +107,22 @@
             { type: 'output', text: '> My study is: Electronic & AI Engineering, 1st grade.'},
             
             { type: 'input', text: 'cat experience_log.txt' },
-            { type: 'output', text: '> Senior Support Staff @ London Community (2.5 Years).' },
-            { type: 'output', text: '> Managed 500+ tickets with 98% satisfaction rate.' },
-            { type: 'output', text: '> Specialized in Conflict Resolution & System Diagnostics.' },
+            { type: 'output', text: '> Senior Support Staff @ Discord London Community (a general chatting & gaming community with +~23000 user) June-2020 - September-2023 / Server Closed' },
+            { type: 'output', text: '> Managed 450+ tickets with ~95% satisfaction rate.' },
+            { type: 'output', text: '> Managed to build a good image on how the user think and what his needs' },
             
-            { type: 'input', text: '/run_skills.exe' },
+            { type: 'input', text: './run_skills.exe' },
             { type: 'output', text: '[LOADING] Analyzing skillset...' },
             { type: 'output', text: '✔ Network Analysis (WinMTR, Packet Loss Debugging)' },
-            { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics' },
+            { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics Understanding' },
             { type: 'output', text: '✔ English Fluency (C1 Level)' },
+            { type: 'output', text: '✔ Great Image on billing-related issues from Stripe/Tebex etc...' },
 
-            { type: 'input', text: 'echo "Ready to Deploy?"' },
-            { type: 'output', text: 'YES. Awaiting instructions...' }
+            { type: 'input', text: 'echo "Am I in Heaven?"' },
+            { type: 'output', text: 'NO, But Might be Soon :D' },
+
+            { type: 'input', text: 'What's 1+1?'},
+            { type: 'output', text: 'Depends on the weather in your country and what are you doing right now it could be 2! good info isn't? :)' },
         ];
 
         const terminalContent = document.getElementById('terminal-content');
