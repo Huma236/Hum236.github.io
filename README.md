@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineer | Terminal Access</title>
+    <title>Humam | Engineer Portfolio</title>
     <style>
         /* إعدادات الصفحة الأساسية */
         body {
@@ -21,33 +21,33 @@
         @keyframes cinematicUp {
             0% {
                 opacity: 0;
-                transform: translateY(100px) scale(0.95); /* يبدأ من تحت وبحجم أصغر قليلاً */
+                transform: translateY(100px) scale(0.95);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1); /* يستقر في مكانه وحجمه الطبيعي */
+                transform: translateY(0) scale(1);
             }
         }
 
-        /* نافذة التيرمينال مع تطبيق الحركة */
+        /* نافذة التيرمينال */
         .terminal-window {
-            width: 800px;
-            max-width: 90%;
-            height: 500px;
+            width: 900px; /* جعلتها أعرض قليلاً لتسع النصوص */
+            max-width: 95%;
+            height: 600px; /* جعلتها أطول قليلاً */
             background-color: #000;
             border: 1px solid #333;
             border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15); /* زدنا التوهج قليلاً */
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
             display: flex;
             flex-direction: column;
             overflow: hidden;
             
             /* تطبيق الأنيميشن */
-            opacity: 0; /* مخفي بالبداية */
-            animation: cinematicUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* حركة انسيابية جداً */
+            opacity: 0;
+            animation: cinematicUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        /* باقي الستايل كما هو */
+        /* الهيدر */
         .terminal-header {
             background-color: #1a1a1a;
             padding: 10px;
@@ -61,17 +61,18 @@
         .yellow { background-color: #ffbd2e; }
         .green { background-color: #27c93f; }
 
+        /* المحتوى */
         .terminal-body {
             padding: 20px;
             flex-grow: 1;
             overflow-y: auto;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6; /* مسافة أفضل بين الأسطر */
         }
 
         .prompt { color: #bd93f9; font-weight: bold; }
         .command { color: #f8f8f2; }
-        .output { color: #00ff41; margin-bottom: 15px; display: block; }
+        .output { color: #00ff41; margin-bottom: 15px; display: block; text-shadow: 0 0 5px rgba(0, 255, 65, 0.3); } /* إضافة توهج للنص */
         .cursor {
             display: inline-block;
             width: 10px;
@@ -100,29 +101,30 @@
     </div>
 
     <script>
-        // هنا البيانات الحقيقية - عدل اسمك وخبراتك هنا
         const commands = [
             { type: 'input', text: 'whoami' },
-            { type: 'output', text: '> Hey, My name is Humam i have 19 years.' },
-            { type: 'output', text: '> My study is: Electronic & AI Engineering, 1st grade.'},
+            { type: 'output', text: '> Hello, I am Humam. 19 years old.' },
+            { type: 'output', text: '> Electronic & AI Engineering Student (First Year Undergraduate).' },
             
             { type: 'input', text: 'cat experience_log.txt' },
-            { type: 'output', text: '> Senior Support Staff @ Discord London Community (a general chatting & gaming community with +~23000 user) June-2020 - September-2023 / Server Closed' },
-            { type: 'output', text: '> Managed 450+ tickets with ~95% satisfaction rate.' },
-            { type: 'output', text: '> Managed to build a good image on how the user think and what his needs' },
+            { type: 'output', text: '> Senior Support Staff @ Discord London Community.' },
+            { type: 'output', text: '> Managed a gaming community of ~23,000 users (Jun 2020 - Sep 2023).' },
+            { type: 'output', text: '> Status: Project Concluded / Server Closed.' },
+            { type: 'output', text: '> Handled 450+ tickets with a 95% satisfaction rate.' },
+            { type: 'output', text: '> Developed deep understanding of user psychology and needs analysis.' },
             
             { type: 'input', text: './run_skills.exe' },
             { type: 'output', text: '[LOADING] Analyzing skillset...' },
             { type: 'output', text: '✔ Network Analysis (WinMTR, Packet Loss Debugging)' },
-            { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics Understanding' },
+            { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics' },
             { type: 'output', text: '✔ English Fluency (C1 Level)' },
-            { type: 'output', text: '✔ Great Image on billing-related issues from Stripe/Tebex etc...' },
+            { type: 'output', text: '✔ Payment & Billing Troubleshooting (Stripe/Tebex)' },
 
             { type: 'input', text: 'echo "Am I in Heaven?"' },
-            { type: 'output', text: 'NO, But Might be Soon :D' },
+            { type: 'output', text: 'NO, But you might be hired soon! ;)' },
 
-            { type: 'input', text: 'What's 1+1?'},
-            { type: 'output', text: 'Depends on the weather in your country and what are you doing right now it could be 2! good info isn't? :)' },
+            { type: 'input', text: 'status' },
+            { type: 'output', text: 'READY FOR DEPLOYMENT.' },
         ];
 
         const terminalContent = document.getElementById('terminal-content');
@@ -138,7 +140,7 @@
             if (charIndex === 0) {
                 const div = document.createElement('div');
                 if (line.type === 'input') {
-                    div.innerHTML = `<span class="prompt">root@engineer:~$</span> <span class="command"></span><span class="cursor"></span>`;
+                    div.innerHTML = `<span class="prompt">root@humam:~$</span> <span class="command"></span><span class="cursor"></span>`;
                 } else {
                     div.innerHTML = `<span class="output"></span>`;
                 }
@@ -164,17 +166,17 @@
             charIndex++;
 
             if (charIndex < line.text.length) {
-                setTimeout(typeLine, 40); // سرعة الكتابة
+                setTimeout(typeLine, 35); // جعلت السرعة أسرع قليلاً (35ms) لتبدو أكثر احترافية
             } else {
                 cmdIndex++;
                 charIndex = 0;
-                setTimeout(typeLine, line.type === 'input' ? 400 : 150); // تأخير بين الأسطر
+                setTimeout(typeLine, line.type === 'input' ? 500 : 150);
             }
         }
 
-        // التعديل الجوهري: تأخير البدء حتى انتهاء حركة الصعود
+        // بدء التشغيل
         window.onload = function() {
-            setTimeout(typeLine, 1500); // ينتظر 1.5 ثانية (حتى تصعد النافذة) ثم يبدأ الكتابة
+            setTimeout(typeLine, 1200); 
         };
     </script>
 </body>
