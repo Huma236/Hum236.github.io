@@ -105,6 +105,7 @@
             { type: 'input', text: 'whoami' },
             { type: 'output', text: '> Hello, I am Humam. 19 years old.' },
             { type: 'output', text: '> Electronic & AI Engineering Student (First Year Undergraduate).' },
+            { type: 'output', text: '> Highly disciplined schedule: Balancing Studies, Work, and Gaming.' },
             
             { type: 'input', text: 'cat experience_log.txt' },
             { type: 'output', text: '> Senior Support Staff @ Discord London Community.' },
@@ -123,13 +124,10 @@
             { type: 'input', text: 'echo "Am I in Heaven?"' },
             { type: 'output', text: 'NO, But you might be hired soon! ;)' },
 
-            { type: 'input', text: 'Why me?' },
+            { type: 'input', text: './run_Why_me.exe' },
             { type: 'output', text: '> Because I offer the rare blend of a Gamer\'s passion and an Engineer\'s logic.' },
             { type: 'output', text: '> Over the past 2 years, I dedicated thousands of hours to deep-dive debugging.' },
             { type: 'output', text: '> Specialized in dissecting Minecraft Client-side vs Server-side anomalies.' },
-            { type: 'output', text: '> As an AI Engineering Student, I treat support tickets as logical system errors.' },
-            { type: 'output', text: '> I do not just apply "quick fixes"; I hunt for the Root Cause.' },
-            { type: 'output', text: '> I am ready to turn this technical obsession into professional value.' },
             { type: 'output', text: '> I aim to elevate my technical expertise by working alongside industry leaders at Hypixel Inc.' },
         ];
 
