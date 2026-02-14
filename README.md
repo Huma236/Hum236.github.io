@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -104,14 +103,15 @@
         // هنا البيانات الحقيقية - عدل اسمك وخبراتك هنا
         const commands = [
             { type: 'input', text: 'whoami' },
-            { type: 'output', text: '> [Your Name] | Electronics & AI Engineering Student.' },
+            { type: 'output', text: '> Hey, My name is Humam i have 19 years.' },
+            { type: 'output', text: '> My study is: Electronic & AI Engineering, 1st grade.'},
             
             { type: 'input', text: 'cat experience_log.txt' },
             { type: 'output', text: '> Senior Support Staff @ London Community (2.5 Years).' },
             { type: 'output', text: '> Managed 500+ tickets with 98% satisfaction rate.' },
             { type: 'output', text: '> Specialized in Conflict Resolution & System Diagnostics.' },
             
-            { type: 'input', text: './run_skills.exe' },
+            { type: 'input', text: '/run_skills.exe' },
             { type: 'output', text: '[LOADING] Analyzing skillset...' },
             { type: 'output', text: '✔ Network Analysis (WinMTR, Packet Loss Debugging)' },
             { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics' },
@@ -134,7 +134,7 @@
             if (charIndex === 0) {
                 const div = document.createElement('div');
                 if (line.type === 'input') {
-                    div.innerHTML = `<span class="prompt">admin@hypixel-candidate:~$</span> <span class="command"></span><span class="cursor"></span>`;
+                    div.innerHTML = `<span class="prompt">root@engineer:~$</span> <span class="command"></span><span class="cursor"></span>`;
                 } else {
                     div.innerHTML = `<span class="output"></span>`;
                 }
