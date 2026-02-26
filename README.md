@@ -266,10 +266,15 @@
             { type: 'output', text: 'NO, But you might be hired soon! ;)' },
 
             { type: 'input', text: './run_Why_me?.exe' },
-            { type: 'output', text: '> Along side of my moderation experience years my goal isn't just about having a role or anything to give the user in this discord community the best experience as we could '},
-            { type: 'output', text: '> While we make sure everything walk perfectly we are trying to punish the user who deserve a punish along-with the discord community policies '},
+            { type: 'output', text: '> Along side of my moderation experience years my goal isn't just about having a role on the community '},
+            { type: 'output', text: '> But i was trying to give the user in this discord community the best experience as i could '},
+            { type: 'output', text: '> At this time i believe this was my beginning and now i'm trying to grow my experience with talented team '},
+            { type: 'output', text: '> Such as Hypixel Team'},
+            { type: 'output', text: '> While we make sure everything walk perfectly we were trying to punish the user who deserve a punish'},
+            { type: 'output', text: '> Along-with the discord community policies not just guessing a punishment'},
             { type: 'output', text: '> And upgrading the team personally and professionally'},
-            { type: 'output', text: '> Sadly the discord community got closed i tried to simulate/rework the sampels we were using you can check them below'},
+            { type: 'output', text: '> Sadly the discord community i worked with got closed '},
+            { type: 'output', text: '> I tried to simulate/rework the sampels we were using you can check them below'},
         ];
 
         const terminalContent = document.getElementById('terminal-content');
