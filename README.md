@@ -265,16 +265,13 @@
             { type: 'input', text: 'echo "Am I in Heaven?"' },
             { type: 'output', text: 'NO, But you might be hired soon! ;)' },
 
-            { type: 'input', text: './run_Why_me?.exe' },
-            { type: 'output', text: "> Along side of my moderation experience years my goal isn't just about having a role on the community" },
-            { type: 'output', text: "> But i was trying to give the user in this discord community the best experience as i could" },
-            { type: 'output', text: "> At this time i believe this was my beginning and now i'm trying to grow my experience with talented team" },
-            { type: 'output', text: "> Such as Hypixel Team" },
-            { type: 'output', text: "> While we make sure everything walk perfectly we were trying to punish the user who deserve a punish" },
-            { type: 'output', text: "> Along-with the discord community policies not just guessing a punishment" },
-            { type: 'output', text: "> And upgrading the team personally and professionally" },
-            { type: 'output', text: "> Sadly the discord community i worked with got closed" },
-            { type: 'output', text: "> I tried to simulate/rework the sampels we were using you can check them below" },
+            { type: 'input', text: './run_Why_me.exe' },
+            { type: 'output', text: '> My goal in moderation is simple: keep the community safe, fair, and enjoyable.' },
+            { type: 'output', text: '> I review reports with context and evidence (logs, screenshots/video) before taking action.' },
+            { type: 'output', text: '> I document decisions clearly so enforcement stays consistent and appeals can be reviewed.' },
+            { type: 'output', text: '> I de-escalate first when possible, and escalate edge cases to the right level when needed.' },
+            { type: 'output', text: '> The Discord community I moderated is now closed, so I can’t share internal logs.' },
+            { type: 'output', text: '> Instead, I created anonymized, simulated workflow samples below to demonstrate my process.' },
         ];
 
         const terminalContent = document.getElementById('terminal-content');
