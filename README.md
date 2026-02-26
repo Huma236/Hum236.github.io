@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,14 +23,8 @@
         }
 
         @keyframes cinematicUp {
-            0% {
-                opacity: 0;
-                transform: translateY(100px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            0% { opacity: 0; transform: translateY(100px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .terminal-window {
@@ -87,17 +80,171 @@
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+        
+        .header-actions{
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .skip-btn{
+            background: rgba(0,0,0,0.35);
+            border: 1px solid #333;
+            color: #f8f8f2;
+            font-family: inherit;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .skip-btn:hover{
+            border-color: #00ff41;
+            box-shadow: 0 0 12px rgba(0, 255, 65, 0.12);
+        }
+
+        
+        .terminal-footer{
+            padding: 10px 12px;
+            border-top: 1px solid #333;
+            background: rgba(0,0,0,0.25);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .footer-label{
+            color: #f8f8f2;
+            opacity: 0.85;
+            font-size: 13px;
+            margin-right: 8px;
+        }
+        .sample-btn{
+            background: rgba(0,0,0,0.35);
+            border: 1px solid #333;
+            color: #bd93f9;
+            font-family: inherit;
+            padding: 8px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .sample-btn:hover{
+            border-color: #00ff41;
+            box-shadow: 0 0 12px rgba(0, 255, 65, 0.12);
+        }
+
+        /* === ADD: PDF modal viewer (new) === */
+        .pdf-modal{
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            z-index: 9999;
+        }
+        .pdf-modal.show{ display: flex; }
+        .pdf-modal-content{
+            width: min(1100px, 98vw);
+            height: min(720px, 92vh);
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .pdf-modal-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-bottom: 1px solid #333;
+            background: rgba(0,0,0,0.35);
+        }
+        .pdf-modal-title{
+            color: #00ff41;
+            font-weight: bold;
+        }
+        .pdf-modal-actions{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .pdf-link{
+            color: #bd93f9;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 7px 10px;
+            border-radius: 6px;
+            background: rgba(0,0,0,0.25);
+        }
+        .pdf-link:hover{ border-color: #00ff41; }
+        .pdf-close{
+            background: rgba(0,0,0,0.25);
+            border: 1px solid #333;
+            color: #f8f8f2;
+            font-family: inherit;
+            padding: 7px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .pdf-close:hover{ border-color: #ff5f56; }
+        .pdf-frame{
+            flex: 1;
+            width: 100%;
+            border: 0;
+            background: #111;
+        }
     </style>
 </head>
 <body>
 
     <div class="terminal-window">
         <div class="terminal-header">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
+           <div class="dot red"></div>
+           <div class="dot yellow"></div>
+           <div class="dot green"></div>
+
+           <div class="header-actions">
+              <button id="skipBtn" class="skip-btn" type="button">SKIP</button>
+           </div>
         </div>
-        <div class="terminal-body" id="terminal-content">
+
+        <!-- ADD: terminal content area (needed for your existing JS) -->
+        <div class="terminal-body" id="terminal-content"></div>
+
+        <!-- ADD: buttons for PDFs -->
+        <div class="terminal-footer">
+            <span class="footer-label">workflow samples:</span>
+
+            <button class="sample-btn" data-title="case-note" data-pdf="./assets/moderation/case-note.pdf">case-note</button>
+            <button class="sample-btn" data-title="case-note-simulated-1" data-pdf="./assets/moderation/case-note-simulated-1.pdf">case-note-simulated-1</button>
+            <button class="sample-btn" data-title="case-note-simulated-2" data-pdf="./assets/moderation/case-note-simulated-2.pdf">case-note-simulated-2</button>
+
+            <button class="sample-btn" data-title="appeal" data-pdf="./assets/moderation/appeal.pdf">appeal</button>
+            <button class="sample-btn" data-title="appeal-1" data-pdf="./assets/moderation/appeal-1.pdf">appeal-1</button>
+            <button class="sample-btn" data-title="appeal-2" data-pdf="./assets/moderation/appeal-2.pdf">appeal-2</button>
+        </div>
+    </div>
+
+    <!-- ADD: PDF Modal -->
+    <div class="pdf-modal" id="pdfModal" aria-hidden="true">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <div class="pdf-modal-title" id="pdfTitle">Document</div>
+
+                <div class="pdf-modal-actions">
+                    <a class="pdf-link" id="pdfOpenNew" href="#" target="_blank" rel="noopener">Open in new tab</a>
+                    <button class="pdf-close" id="pdfClose" type="button">Close</button>
+                </div>
+            </div>
+
+            <iframe class="pdf-frame" id="pdfFrame" loading="lazy"></iframe>
         </div>
     </div>
 
@@ -140,7 +287,11 @@
         let cmdIndex = 0;
         let charIndex = 0;
 
+        /* ADD: skip flag */
+        let isSkipping = false;
+
         function typeLine() {
+            if (isSkipping) return;
             if (cmdIndex >= commands.length) return;
 
             const line = commands[cmdIndex];
@@ -180,9 +331,85 @@
             }
         }
 
+        /* ADD: render instantly for SKIP */
+        function renderAllInstantly() {
+            terminalContent.innerHTML = '';
+
+            commands.forEach(line => {
+                const div = document.createElement('div');
+
+                if (line.type === 'input') {
+                    const prompt = document.createElement('span');
+                    prompt.className = 'prompt';
+                    prompt.textContent = 'root@engineer:~$';
+
+                    const cmd = document.createElement('span');
+                    cmd.className = 'command';
+                    cmd.textContent = ' ' + line.text;
+
+                    div.appendChild(prompt);
+                    div.appendChild(cmd);
+                } else {
+                    const out = document.createElement('span');
+                    out.className = 'output';
+                    out.textContent = line.text;
+                    div.appendChild(out);
+                }
+
+                terminalContent.appendChild(div);
+            });
+
+            cmdIndex = commands.length;
+            charIndex = 0;
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+
         window.onload = function() {
             setTimeout(typeLine, 1200); 
         };
+
+        /* ADD: SKIP button handler */
+        document.getElementById('skipBtn').addEventListener('click', () => {
+            isSkipping = true;
+            renderAllInstantly();
+        });
+
+        /* ADD: PDF Modal Viewer */
+        const pdfModal = document.getElementById('pdfModal');
+        const pdfFrame = document.getElementById('pdfFrame');
+        const pdfTitle = document.getElementById('pdfTitle');
+        const pdfOpenNew = document.getElementById('pdfOpenNew');
+        const pdfClose = document.getElementById('pdfClose');
+
+        function openPDF(title, src){
+            pdfTitle.textContent = title;
+            pdfFrame.src = src;
+            pdfOpenNew.href = src;
+            pdfModal.classList.add('show');
+            pdfModal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closePDF(){
+            pdfModal.classList.remove('show');
+            pdfModal.setAttribute('aria-hidden', 'true');
+            pdfFrame.src = 'about:blank';
+        }
+
+        document.querySelectorAll('.sample-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                openPDF(btn.dataset.title, btn.dataset.pdf);
+            });
+        });
+
+        pdfClose.addEventListener('click', closePDF);
+
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) closePDF();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && pdfModal.classList.contains('show')) closePDF();
+        });
     </script>
 </body>
 </html>
