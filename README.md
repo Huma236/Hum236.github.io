@@ -215,10 +215,10 @@
            </div>
         </div>
 
-        <!-- ADD: terminal content area (needed for your existing JS) -->
+        
         <div class="terminal-body" id="terminal-content"></div>
 
-        <!-- ADD: buttons for PDFs -->
+        
         <div class="terminal-footer">
             <span class="footer-label">workflow samples:</span>
 
@@ -232,7 +232,7 @@
         </div>
     </div>
 
-    <!-- ADD: PDF Modal -->
+    
     <div class="pdf-modal" id="pdfModal" aria-hidden="true">
         <div class="pdf-modal-content">
             <div class="pdf-modal-header">
@@ -261,33 +261,22 @@
             { type: 'output', text: '> Status: Project Concluded / Server Closed.' },
             { type: 'output', text: '> Handled 450+ tickets with a 95% satisfaction rate.' },
             { type: 'output', text: '> Developed deep understanding of user psychology and needs analysis.' },
-            
-            { type: 'input', text: './run_skills.exe' },
-            { type: 'output', text: '[LOADING] Analyzing skillset...' },
-            { type: 'output', text: '✔ Network Analysis (WinMTR, Packet Loss Debugging)' },
-            { type: 'output', text: '✔ Hypixel Watchdog Logic & Anticheat Mechanics' },
-            { type: 'output', text: '✔ English Fluency (C1 Level)' },
-            { type: 'output', text: '✔ Payment & Billing Troubleshooting (Stripe/Tebex)' },
 
             { type: 'input', text: 'echo "Am I in Heaven?"' },
             { type: 'output', text: 'NO, But you might be hired soon! ;)' },
 
-            { type: 'input', text: './run_Why_me.exe' },
-            { type: 'output', text: '> Because I offer the rare blend of a Gamer\'s passion and an Engineer\'s logic.' },
-            { type: 'output', text: '> Over the past 2 years, I dedicated thousands of hours to deep-dive debugging.' },
-            { type: 'output', text: '> Specialized in dissecting Minecraft Client-side vs Server-side anomalies.' },
-            { type: 'output', text: '> As an AI Engineering Student, I treat support tickets as logical system errors.' },
-            { type: 'output', text: '> I aim to elevate my technical expertise by working alongside industry leaders at Hypixel Inc.' },
-            
-            { type: 'input', text: 'status' },
-            { type: 'output', text: 'READY FOR DEPLOYMENT.' },
+            { type: 'input', text: './run_Why_me?.exe' },
+            { type: 'output', text: '> Along side of my moderation experience years my goal isn't just about having a role or anything to give the user in this discord community the best experience as we could '},
+            { type: 'output', text: '> While we make sure everything walk perfectly we are trying to punish the user who deserve a punish along-with the discord community policies '},
+            { type: 'output', text: '> And upgrading the team personally and professionally'},
+            { type: 'output', text: '> Sadly the discord community got closed i tried to simulate/rework the sampels we were using you can check them below'},
         ];
 
         const terminalContent = document.getElementById('terminal-content');
         let cmdIndex = 0;
         let charIndex = 0;
 
-        /* ADD: skip flag */
+        
         let isSkipping = false;
 
         function typeLine() {
