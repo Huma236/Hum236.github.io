@@ -271,6 +271,7 @@
             { type: 'output', text: '> I de-escalate first when possible, and escalate edge cases to the right level when needed.' },
             { type: 'output', text: '> The Discord community I moderated is now closed, so I can’t share internal logs.' },
             { type: 'output', text: '> Instead, I created anonymized, simulated workflow samples below to demonstrate my process.' },
+            { type: 'output', text: '> Workflow samples are simulated/anonymized to demonstrate my moderation process.'},
         ];
 
         const terminalContent = document.getElementById('terminal-content');
