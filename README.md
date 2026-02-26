@@ -259,7 +259,7 @@
             { type: 'output', text: '> Senior Support Staff @ Discord London Community.' },
             { type: 'output', text: '> Managed a hybrid Social & Gaming Community of ~23,000 users (Jun 2020 - Sep 2022).' },
             { type: 'output', text: '> Status: Project Concluded / Server Closed.' },
-            { type: 'output', text: '> Handled 450+ tickets with a 95% satisfaction rate.' },
+            { type: 'output', text: '> Handled 450+ tickets.' },
 
             { type: 'input', text: 'echo "Am I in Heaven?"' },
             { type: 'output', text: 'NO, But you might be hired soon! ;)' },
